@@ -9,12 +9,14 @@ function validacion() {
     if (name == null || name.length == 0 || /^[a-z][a-z]*/.test(name) == false) {
         // Validar Nombre
         alert('[ERROR] Solo admite caracteres (nombre)');
+        document.getElementById("nombre").focus();
         console.log(name);
         return false;
 
     } else if (subname == null || subname.length == 0 || /^[a-z][a-z]*/.test(subname) == false) {
         // Validar Apellido
         alert('[ERROR] Solo admite caracteres');
+        document.getElementById("apellido").focus();
         console.log("subname");
         return false;
 
@@ -26,12 +28,14 @@ function validacion() {
     } else if (pass == null || pass.length < 9) {
         // Validar password
         alert('[ERROR] El campo debe tener una longitud de 8 caracteres alfanumericos');
+        document.getElementById("password").focus();
         console.log("pass")
         return false;
 
     } else if (repass != pass) {
         // Validar repassword
         alert('[ERROR] El campo Re-password debe ser igual que el password');
+        document.getElementById("repassword").focus();
         console.log("repass");
         return false;
     }
