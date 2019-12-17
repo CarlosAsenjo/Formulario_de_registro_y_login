@@ -13,16 +13,16 @@
 
     <h2>Formulario de registro</h2>
 
-    <form action="" method="post" name="form">
+    <form action="" method="post" name="form" onsubmit="return validacion()">
 
         <div>
             <label for="nombre">Nombre*:</label>
-            <input type="text" id="nombre" name="nombre_usuario">
+            <input type="text" id="nombre" name="nombre_usuario" value="this">
         </div>
 
         <div>
-            <label for="Apellido">Apellido*:</label>
-            <input type="text" id="Apellido" name="apellido_usuario">
+            <label for="apellido">Apellido*:</label>
+            <input type="text" id="apellido" name="apellido_usuario">
         </div>
 
         <div>
@@ -50,16 +50,6 @@
         </div>
     </form>
 
-    <!--//BLOQUE COOKIES-->
-    <div id="barraaceptacion" style="display: block;">
-        <div class="inner">
-            Solicitamos su permiso para obtener datos estadísticos de su navegación en esta web, en cumplimiento del Real Decreto-ley 13/2012. Si continúa navegando consideramos que acepta el uso de cookies.
-            <a href="javascript:void(0);" class="ok" onclick="PonerCookie();"><b>OK</b></a> |
-            <a href="http://politicadecookies.com" target="_blank" class="info">Más información</a>
-        </div>
-    </div>
-
-    <!--//FIN BLOQUE COOKIES-->
     <script src="js/form.js"></script>
 </body>
 

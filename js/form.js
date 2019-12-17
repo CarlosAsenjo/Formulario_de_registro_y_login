@@ -1,52 +1,56 @@
-var name = document.form.name.value;
-var apellido = document.form.apellido.value;
-var email = document.form.email.value;
-var telefono = document.form.telefono.value;
-var pass = document.form.pass.value;
-var repass = document.form.repass.value;
-//COMPROBAR
-function formatoMail(str) {
+var name = document.getElementById('nombre_usuario').value;
+console.log("nombre1");
+var subname = document.getElementById('apellido').value;
+console.log("apellido1");
+var email = document.getElementById('mail').value;
+console.log("mail1");
+var movil = document.getElementById('movil').value;
+console.log("movil1");
+var pass = document.getElementById('password').value;
+console.log("pass1");
+var repass = document.getElementById('repassword').value;
+console.log("repassword1");
 
-    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+function validacion() {
 
-    if (!mailformat.test(str)) {
+    if (name == null || name.length == 0 || /^\s+$/.test(name)) {
+        // Validar Nombre
+        alert('[ERROR] Solo admite caracteres');
+        console.log(name);
+        return false;
 
-        document.form.email.style = "red";
+    } else if (subname == null || subname.length == 0 || /^\s+$/.test(subname)) {
+        // Validar Apellido
+        alert('[ERROR] Solo admite caracteres');
+        console.log("subname");
+        return false;
+
+    } else if (!(/\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)/.test(email))) {
+        // Validar Email
+        console.log("email");
+        return false;
+
+    } else if (!(/^\d{9}$/.test(movil))) {
+        // Validar Telefono
+        alert('[ERROR] El campo debe tener una longitud de 9 digitos');
+        console.log("movil");
+        return false;
+
+    } else if (pass == null || pass.length < 9) {
+        // Validar password
+        alert('[ERROR] El campo debe tener una longitud de 8 caracteres alfanumericos');
+        console.log("pass")
+        return false;
+
+    } else if (repass != pass) {
+        // Validar repassword
+        alert('[ERROR] El campo debe ser igual que el password');
+        console.log("repass");
+        return false;
     }
-}
 
-//COOKIE
-function getCookie(c_name) {
-    var c_value = document.cookie;
-    var c_start = c_value.indexOf(" " + c_name + "=");
-    if (c_start == -1) {
-        c_start = c_value.indexOf(c_name + "=");
-    }
-    if (c_start == -1) {
-        c_value = null;
-    } else {
-        c_start = c_value.indexOf("=", c_start) + 1;
-        var c_end = c_value.indexOf(";", c_start);
-        if (c_end == -1) {
-            c_end = c_value.length;
-        }
-        c_value = unescape(c_value.substring(c_start, c_end));
-    }
-    return c_value;
-}
-
-function setCookie(c_name, value, exdays) {
-    var exdate = new Date();
-    exdate.setDate(exdate.getDate() + exdays);
-    var c_value = escape(value) + ((exdays == null) ? "" : "; expires=" + exdate.toUTCString());
-    document.cookie = c_name + "=" + c_value;
-}
-
-if (getCookie('tiendaaviso') != "1") {
-    document.getElementById("barraaceptacion").style.display = "block";
-}
-
-function PonerCookie() {
-    setCookie('tiendaaviso', '1', 365);
-    document.getElementById("barraaceptacion").style.display = "none";
+    // Si el script ha llegado a este punto, todas las condiciones
+    // se han cumplido, por lo que se devuelve el valor true
+    document.write("<h1>BIENVENIDO</h1>");
+    return true;
 }
