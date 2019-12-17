@@ -42,7 +42,8 @@ function validacion() {
 
     // Si el script ha llegado a este punto, todas las condiciones
     // se han cumplido, por lo que se devuelve el valor true
-    document.write("<h1>BIENVENIDO</h1><br><dt>Nombre:</dt><dd>" + name + "</dd><dt>Apellido:</dt><dd>" + subname + "</dd>").innerHTML;
+    document.write("<h1>BIENVENIDO</h1><br><dt>Nombre:</dt><dd>" + name + "</dd><dt>Apellido:</dt><dd>" + subname + "</dd>");
+
 
     return true;
 }
