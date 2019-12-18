@@ -13,48 +13,46 @@
 
     <h1>Formulario de registro</h1>
 
-    <form class="formulario" method="POST" onsubmit="return validacion()">
+    <form class="formulario" method="POST" onsubmit="validacion()">
 
         <!-- nombre input-->
         <div class="form-group">
             <label for="name">Nombre*: </label>
-            <input id="nombre" name="nombre" type="text" placeholder="Nombre" class="form-control input-md" required="" value="">
+            <input id="nombre" name="nombre" type="text" placeholder="Nombre" class="form-control input-md" pattern="[a-z]{1,15}" required="" value="">
         </div>
 
         <!-- Apellido input-->
         <div class="form-group">
             <label for="apellido">Apellido*:</label>
-            <input id="apellido" name="apellido" type="text" placeholder="Apellido" class="form-control input-md" required="" value="">
+            <input id="apellido" name="apellido" type="text" placeholder="Apellido" class="form-control input-md" pattern="[a-z]{1,15}" required="" value="">
         </div>
 
         <!-- Email input-->
         <div class="form-group">
-            <label for="mail">Email*:</label>
-            <input id="mail" name="mail" type="text" placeholder="xxx@xxx.com" class="form-control input-md" required="" value="">
+            <label for="mail">Email o Teléfono*:</label>
+            <input id="contact" name="contact" type="text" placeholder="xxx@xxx.com / 6********" pattern="([0-9]{9})|[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="form-control input-md" required="" value="">
         </div>
         <!-- Fecha nacimiento input-->
         <div class="form-group">
             <label for="fechaNac">Fecha nacimiento:</label>
             <input id="fechaNac" name="fechaNac" type="date" class="form-control input-md">
-
         </div>
 
         <!-- Password input-->
         <div class="form-group">
             <label for="password">Password*:</label>
-            <input id="password" name="password" type="password" placeholder="***********" class="form-control input-md" required="" value="">
+            <input id="password" name="password" type="password" placeholder="***********" class="form-control input-md" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  required="" value="">
         </div>
 
         <!-- Re-Password input-->
         <div class="form-group">
             <label for="repasswor">Re-Password*:</label>
-            <input id="repassword" name="repassword" type="password" placeholder="***********" class="form-control input-md" required="" value="">
+            <input id="repassword" name="repassword" type="password" placeholder="***********" class="form-control input-md" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required="" value="">
         </div>
 
         <!-- Botom -->
         <div class="form-group">
-            <label for="enviar">Enviar</label>
-            <button type="submit" id="enviar" name="enviar" class="btn btn-primary">Enviar</button>
+            <input type="submit" value="Enviar" id="reg-button">
         </div>
     </form>
 
