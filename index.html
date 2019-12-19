@@ -30,7 +30,7 @@
         <!-- Email input-->
         <div class="form-group">
             <label for="mail">Email o Teléfono*:</label>
-            <input id="contact" name="contact" type="text" placeholder="xxx@xxx.com / 6********" pattern="([0-9]{9})|[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="form-control input-md" required="" value="">
+            <input id="contact" name="contact" type="text" placeholder="xxx@xxx.com / 6********" pattern="^[7|6]\d{8}|[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="form-control input-md" required="" value="">
         </div>
         <!-- Fecha nacimiento input-->
         <div class="form-group">
@@ -55,8 +55,6 @@
             <input type="submit" value="Enviar" id="reg-button">
         </div>
     </form>
-
-    <p class="demo"></p>
 
     <script src="js/form.js"></script>
 </body>
