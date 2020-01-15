@@ -12,15 +12,18 @@
 <body>
 
     <nav>
-        <button type="submit" id="reg-button">registro</button>
-        <button type="submit" id="log-button">Log In</button>
+        <div id="choice">
+            <button type="submit" id="reg-button" style="display:block;">registro</button>
+            <button type="submit" id="log-button" style="display: block;">Log In</button>
+        </div>
+        <!---BOTON LOG OUT (PERMANECE OCULTO)-->
         <button type="submit" id="logOut-button" style="display: none;"transition: 1s;>Log Out</button>
     </nav>
 
-            <!---FORMULARIO DE REGISTRO-->
+            <!---FORMULARIO DE LOGIN-->
     <div id="login" style="display: none;">
         <fieldset>
-            <form method="post" onsubmit="validacion()"></form>
+            <form method="post" onsubmit="return validacion()"></form>
           <!-- Email input-->
         <div class="form-group">
             <label for="contacto">E-mail*:</label>
@@ -48,7 +51,7 @@
 
         <h1>Formulario de registro</h1>
 
-        <form class="formulario" method="POST" onsubmit="validacion()">
+        <form class="formulario" method="POST" onsubmit="return validacion()">
 
             <!-- nombre input-->
             <div class="form-group">

@@ -49,7 +49,8 @@ input{
 
   }
 
-  button[id=reg-button]:hover,button[id=log-button]:hover {
+  button[id=reg-button]:hover,
+  button[id=log-button]:hover{
     background-color: #9ba53d;
   }
 

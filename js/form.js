@@ -1,16 +1,17 @@
 
 document.getElementById("reg-button").addEventListener('click', function () {
-    tab("registro", "login", "name")
+    tab("registro", "login",/*""choice",*/ "nombre")
 })
 
 document.getElementById("log-button").addEventListener('click', function () {
-    tab("login", "registro", "user")
+    tab("login", "registro",/*"choice",*/ "contacto")
 })
 
-function tab (show, hide, focus){
+function tab (show, hide1,/*"hide2,*/ focus){
     document.getElementById(show).style.display = "block";
+    document.getElementById(hide1).style.display = "none";
+    //document.getElementById(hide2).style.display = "none";
     document.getElementById(focus).focus();
-    document.getElementById(hide).style.display = "none";
 }
 
 
@@ -41,7 +42,7 @@ function validacion() {
         console.log("subname");
         return false;
 
-    } else if (contact == null || contact.length == 0 || /\S+@\S+\.\S+/.test(contact) == false) {
+    } else if (contact == null || contact.length == 0 || !/\S+@\S+\.\S+/.test(contact) == false) {
         // Validar Email
         console.log("email false");
         return false;
@@ -68,6 +69,8 @@ function validacion() {
     setCookie("repassword", repass, 1);
     console.log(document.cookie);
 
+    document.getElementById("logOut-button").style.display ="block"
+    document.getElementsByTagName("body")[0].style.background = "white";
     document.write("<h1>BIENVENIDO</h1><br><dt>Nombre:</dt><dd>" + name + "</dd><dt>Apellido:</dt><dd>" + subname + "</dd>");
 
     return true;
