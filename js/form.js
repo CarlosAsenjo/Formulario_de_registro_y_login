@@ -1,4 +1,19 @@
 
+document.getElementById("reg-button").addEventListener('click', function () {
+    tab("registro", "login", "name")
+})
+
+document.getElementById("log-button").addEventListener('click', function () {
+    tab("login", "registro", "user")
+})
+
+function tab (show, hide, focus){
+    document.getElementById(show).style.display = "block";
+    document.getElementById(focus).focus();
+    document.getElementById(hide).style.display = "none";
+}
+
+
 
 /* ############ Validacion ############# */
 /*function validacion() {

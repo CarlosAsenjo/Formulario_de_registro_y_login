@@ -12,18 +12,43 @@
 <body>
 
     <nav>
-        <button type="submit" id="reg-button" name="reg-button" class="reg-button">registro</button>
-        <button type="submit" id="log-button" name="log-button" class="log-button">Log In</button>
-        <button type="submit" id="logOut-button" name="logOut-button" class="logOut-button" style="display: none;">Log Out</button>
+        <button type="submit" id="reg-button">registro</button>
+        <button type="submit" id="log-button">Log In</button>
+        <button type="submit" id="logOut-button" style="display: none;"transition: 1s;>Log Out</button>
     </nav>
 
+            <!---FORMULARIO DE REGISTRO-->
+    <div id="login" style="display: none;">
+        <fieldset>
+            <form method="post" onsubmit="validacion()"></form>
+          <!-- Email input-->
+        <div class="form-group">
+            <label for="contacto">E-mail*:</label>
+            <input id="contacto" name="contacto" type="text" placeholder="xxx@xxx.com" class="form-control input-md" required="" value="">
+        </div>
+
+        <!-- Password input-->
+        <div class="form-group">
+            <label for="password">Password*:</label>
+            <input id="password" name="password" type="password" placeholder="***********" class="form-control input-md" required="" value="">
+        </div>
+
+        <!-- Boton -->
+        <div class="form-group">
+            <button type="submit" id="enviar" name="enviar" class="send-button">Enviar</button>
+        </div>        
+    </fieldset>
+    </div>
+
+    
+        <!---FORMULARIO DE REGISTRO-->
     <div id="registro" style="display: none;">
 
     <fieldset>
 
         <h1>Formulario de registro</h1>
 
-        <form class="formulario" method="POST" onsubmit="return validacion()">
+        <form class="formulario" method="POST" onsubmit="validacion()">
 
             <!-- nombre input-->
             <div class="form-group">
@@ -60,7 +85,7 @@
                 <input id="repassword" name="repassword" type="password" placeholder="***********" class="form-control input-md" required="" value="">
             </div>
 
-            <!-- Botom -->
+            <!-- Boton -->
             <div class="form-group">
                 <button type="submit" id="enviar" name="enviar" class="send-button">Enviar</button>
             </div>
