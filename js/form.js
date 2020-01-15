@@ -1,7 +1,9 @@
+
+
+/* ############ Validacion ############# */
 /*function validacion() {
       event.preventDefault();
 }*/
-
 function validacion() {
 
     var name = document.getElementById('nombre').value;

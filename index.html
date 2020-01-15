@@ -11,7 +11,16 @@
 
 <body>
 
+    <nav>
+        <button type="submit" id="reg-button" name="reg-button" class="reg-button">registro</button>
+        <button type="submit" id="log-button" name="log-button" class="log-button">Log In</button>
+        <button type="submit" id="logOut-button" name="logOut-button" class="logOut-button" style="display: none;">Log Out</button>
+    </nav>
+
+    <div id="registro" style="display: none;">
+
     <fieldset>
+
         <h1>Formulario de registro</h1>
 
         <form class="formulario" method="POST" onsubmit="return validacion()">
@@ -53,11 +62,11 @@
 
             <!-- Botom -->
             <div class="form-group">
-                <label for="enviar">Enviar</label>
-                <button type="submit" id="enviar" name="enviar" class="reg-button">Enviar</button>
+                <button type="submit" id="enviar" name="enviar" class="send-button">Enviar</button>
             </div>
         </form>
     </fieldset>
+</div>
 
     <p class="demo"></p>
 
