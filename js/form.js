@@ -1,16 +1,15 @@
 
 document.getElementById("reg-button").addEventListener('click', function () {
-    tab("registro", "login",/*""choice",*/ "nombre")
+    tab("registro", "login","nombre")
 })
 
 document.getElementById("log-button").addEventListener('click', function () {
-    tab("login", "registro",/*"choice",*/ "contacto")
+    tab("login", "registro", "contacto")
 })
 
 function tab (show, hide1,/*"hide2,*/ focus){
     document.getElementById(show).style.display = "block";
     document.getElementById(hide1).style.display = "none";
-    //document.getElementById(hide2).style.display = "none";
     document.getElementById(focus).focus();
 }
 
