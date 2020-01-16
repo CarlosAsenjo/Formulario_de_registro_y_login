@@ -41,7 +41,8 @@ input{
     background-color: #9ba53d;
   }
 
-  button[id=enviar] {
+  button[id=enviarLog],
+  button[id=enviarReg] {
     width: 100%;
     background-color: #4CAF50;
     color: white;
@@ -52,7 +53,8 @@ input{
     cursor: pointer;
   }
 
-  button[id=enviar]:hover {
+  button[id=enviarLog],
+  button[id=enviarReg]:hover {
     background-color: #45a049;
   }
 
