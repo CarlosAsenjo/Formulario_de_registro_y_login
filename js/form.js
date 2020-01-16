@@ -127,7 +127,7 @@ document.getElementById("enviarLog").addEventListener('click', function () {
 
 window.onload = function (){
 
-    if (userSession == getCookie("user") && passSession == getCookie("pass")){
+    if (userSession == getCookie("userSession") && passSession == getCookie("passSession")){
         log();
     }
 }
@@ -137,9 +137,16 @@ function log(){
     document.getElementById("reg-button").style.display = "none";
     document.getElementById("log-button").style.display = "none";
     document.getElementById("login").style.display = "none";
-    document.getElementById("welcome").style.display = "block";
 }
 
 /* ############ Log Out ############# */
 
-document.getElementById()
+document.getElementById("logOut-button").addEventListener('click', function (){
+
+    delete_cookie("userSession");
+    delete_cookie("passSession");
+    document.getElementById("logOut-button").style.display = "none";
+    document.getElementById("welcome").style.display = "block";
+    document.getElementById("welcome").style.color = "green";
+
+});
