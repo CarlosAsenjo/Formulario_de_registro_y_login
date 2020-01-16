@@ -17,6 +17,9 @@ var name = document.getElementById("nombre").value;
 var subname = document.getElementById("apellido").value;
 var contact = document.getElementById("contacto").value;
 console.log(contact);
+//var contactLog = document.getElementById('contactolog').value;
+//var passLog = document.getElementById('passwordlog').value
+
 
 /* ############ Mostrar contraseña ############# */
 
@@ -26,14 +29,17 @@ function mostrarPass(pass1, pass2) {
 
     if (mostrarPass.type == "password") {
         mostrarPass.type = "text";
-        if (mostrarPass2)
-        mostrarPass2.type = "text";
-    } else {
+        if (mostrarPass2){
+            mostrarPass2.type = "text";
+        }
+    }else{
         mostrarPass.type = "password";
-        if (mostrarPass2)
-        mostrarPass2.type = "password";
+        if (mostrarPass2){
+            mostrarPass2.type = "password";
+        }
     }
 }
+
 
 /* ############ Cookies ############# */
 
@@ -50,11 +56,12 @@ function getCookie(nameCookie) {
     var arrayCookie = cookieDecoded.split(';');
     for (var i = 0; i < arrayCookie.length; i++) {
         var cookie = arrayCookie[i];
-        while (cookie.charAt(0) == ' ')
+        while (cookie.charAt(0) == ' '){
             cookie = cookie.substring(1);
-        if (cookie.indexOf(name) == 0){
-            console.log("%cOK! Cookie does exists.", 'background: #222; color: green');
-            return cookie.substring(name.length, cookie.length);
+            if (cookie.indexOf(name) == 0){
+                console.log("%cOK! Cookie does exists.", 'background: #222; color: green');
+                return cookie.substring(name.length, cookie.length);
+            }
         }
     }
     console.log("%cKO! Cookie does NOT exists.", 'background: #222; color: red');
@@ -76,3 +83,50 @@ function checkCookie() {
 function delete_cookie(name) {
     document.cookie = name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 }
+
+
+/* ############ Validacion ############# */
+
+function valPass(pass, repass){
+    if(pass == repass){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+function validacion() {
+    event.preventDefault();
+    var user = document.getElementById("contacto").value;
+    var pass = document.getElementById("pass").value;
+    if (valPass(pass, document.getElementById("repass").value)){
+        setCookie("user", user, 1);
+        setCookie("pass", pass, 1);
+    console.log(document.cookie);
+    }
+    else{
+        console.log("error");
+    }
+}
+
+document.getElementById("enviarLog").addEventListener('click', function () {
+
+    var userSession = document.getElementById("contactoLog").value;
+    var passSession = document.getElementById("passwordLog").value;
+    console.log(userSession);
+    console.log(passSession);
+    console.log("The user name is: " + getCookie("user"));
+    if (userSession == getCookie("contactoLog") && passSession == getCookie("passwordLog")){
+       
+        console.log("user correct");
+        setCookie("userSession", userSession, 0.041667);
+        setCookie("passSession", passSession, 0.041667);
+        console.log("%cSession Created! Cookies lasts for 1h.", 'background: #222; color: green');
+    
+    } else {
+        
+        console.log("user incorrecto");
+    }
+    console.log(document.cookie);
+    console.log("Cookie checked");
+});
