@@ -8,7 +8,7 @@ document.getElementById("log-button").addEventListener('click', function() {
 
 function tab(show, hide1, focus) {
     document.getElementById(show).style.display = "block";
-    document.getElementById(hide).style.display = "none";
+    document.getElementById(hide1).style.display = "none";
     document.getElementById(focus).focus();
 }
 
