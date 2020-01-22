@@ -1,5 +1,4 @@
 
-
 h1{
     text-align: center;
 }
@@ -12,11 +11,18 @@ fieldset {
     margin: auto;
 }
 
+
+
+#welcome{
+  color: blueviolet;
+  justify-content: center;
+  text-align: center;
+}
+
 input{
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
-    display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
@@ -56,6 +62,17 @@ input{
   button[id=enviarLog],
   button[id=enviarReg]:hover {
     background-color: #45a049;
+  }
+
+  button[id=logOut-button]{
+    background-color: #f15959;
+    font-weight: bold;
+    width: 8%;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
   }
 
   
