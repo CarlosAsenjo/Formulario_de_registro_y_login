@@ -131,6 +131,7 @@ document.getElementById("enviarLog").addEventListener("click", function() {
     console.log("Cookie checked");
 
 });
+
 document.getElementById("enviarReg").addEventListener("click", function() {
     document.getElementById("registro").style.display = "none";
     document.getElementById("welcome").style.display = "block";
