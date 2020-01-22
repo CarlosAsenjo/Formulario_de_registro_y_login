@@ -1,3 +1,6 @@
+body {
+    background: rgb(31, 30, 30);
+}
 
 h1{
     text-align: center;
@@ -26,41 +29,37 @@ input{
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-  }
+}
 
-  /*BOTONES*/
 
-  button[id=reg-button],button[id=log-button] {
+/*BOTONES*/
+
+input[id=reg],
+input[id=log] {
     width: 8%;
     background-color: rgb(226, 250, 87);
     font-weight: bold;
-    padding: 14px 20px;
     margin: 8px 0;
-    border: none;
     border-radius: 4px;
-    cursor: pointer;
+}
 
-  }
-
-  button[id=reg-button]:hover,
-  button[id=log-button]:hover{
+input[id=reg]:hover,
+input[id=log]:hover {
     background-color: #9ba53d;
-  }
+}
 
-  button[id=enviarLog],
-  button[id=enviarReg] {
+button[id=enviarLog],
+button[id=enviarReg] {
     width: 100%;
     background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
-    border: none;
     border-radius: 4px;
-    cursor: pointer;
-  }
+}
 
-  button[id=enviarLog],
-  button[id=enviarReg]:hover {
+button[id=enviarLog],
+button[id=enviarReg]:hover {
     background-color: #45a049;
   }
 
