@@ -2,13 +2,6 @@ h1 {
     text-align: center;
 }
 
-.#choice {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-}
-
 fieldset {
     background: white;
     border: 5px rgb(025, 255, 025);

@@ -144,9 +144,9 @@ document.getElementById("enviar").addEventListener("click", function() {
 
     }
 
-    if (userSession != getCookie("user") || getCookie("pass") == "") {
+    if (getCookie("user") == "" || getCookie("pass") == "") {
         console.log("user incorrecto log");
-        document.getElementById("login").style.display = "block";
+        // document.getElementById("login").style.display = "block";
         err();
 
     }
@@ -165,7 +165,7 @@ function reg() {
     document.getElementById("registro").style.display = "none";
     document.getElementById("login").style.display = "block";
     green()
-    document.getElementById("demo").innerHTML = "Registro con exito"
+    document.getElementById("demo").innerHTML = "Registro con exito";
 }
 
 
@@ -177,8 +177,7 @@ function log() {
     document.getElementById("choice").style.display = "none";
     document.getElementById("login").style.display = "none";
     document.getElementById("logOut-button").style.display = "block";
-    document.getElementById("welcome").style.display = "block";
-    document.getElementById("welcome").style.color = "blue";
+    green();
     document.getElementById("demo").innerHTML = "Bienvenido " + getCookie("userSession");
 }
 
