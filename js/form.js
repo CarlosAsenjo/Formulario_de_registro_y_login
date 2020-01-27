@@ -4,8 +4,6 @@ window.onload = function() {
     if (getCookie("userSession") && getCookie("passSession")) {
         log();
         console.log("window.onload");
-    } else {
-        document.getElementById("login").style.display = "block";
     }
 }
 
@@ -14,10 +12,12 @@ window.onload = function() {
 
 document.getElementById("reg-button").addEventListener('click', function() {
     tab("registro", "login", "nombre");
+
 });
 
 document.getElementById("log-button").addEventListener('click', function() {
     tab("login", "registro", "contacto");
+
 });
 
 /* ############ Mostrar / Ocultar ############# */
@@ -52,6 +52,7 @@ function getCookie(nameCookie) {
         }
     }
     console.log("%cKO! Cookie does NOT exists.", 'background: #222; color: red');
+
     return null;
 }
 
@@ -70,6 +71,7 @@ function checkCookie() {
 function delete_cookie(name) {
     document.cookie = name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 }
+
 
 
 /* ############ Mostrar contraseña ############# */
@@ -140,7 +142,9 @@ document.getElementById("enviar").addEventListener("click", function() {
         setCookie("passSession", passSession, 0.041667);
         console.log("%cSession Created! Cookies lasts for 1h.", 'background: #222; color: green');
 
-    } else if (userSession != getCookie("user") || passSession != getCookie("pass")) {
+    }
+
+    if (userSession != getCookie("user") || getCookie("pass") == "") {
         console.log("user incorrecto log");
         document.getElementById("login").style.display = "block";
         err();
@@ -157,13 +161,10 @@ document.getElementById("enviar").addEventListener("click", function() {
 function reg() {
 
     console.log("registrado")
-    document.getElementById("reg-button").style.display = "none";
-    document.getElementById("log-button").style.display = "none";
+    document.getElementById("choice").style.display = "none";
     document.getElementById("registro").style.display = "none";
     document.getElementById("login").style.display = "block";
-    document.getElementById("welcome").style.display = "block";
-    document.getElementById("welcome").style.backgroundColor = "white";
-    document.getElementById("welcome").style.color = "green";
+    green()
     document.getElementById("demo").innerHTML = "Registro con exito"
 }
 
@@ -173,8 +174,7 @@ function reg() {
 function log() {
 
     console.log("logueado")
-    document.getElementById("reg-button").style.display = "none";
-    document.getElementById("log-button").style.display = "none";
+    document.getElementById("choice").style.display = "none";
     document.getElementById("login").style.display = "none";
     document.getElementById("logOut-button").style.display = "block";
     document.getElementById("welcome").style.display = "block";
@@ -195,10 +195,8 @@ document.getElementById("logOut-button").addEventListener('click', function() {
     console.log("cookies eliminadas")
 
     document.getElementById("logOut-button").style.display = "none";
-    document.getElementById("welcome").style.display = "block";
-    document.getElementById("welcome").style.color = "green";
+    green();
     document.getElementById("demo").innerHTML = "ADEU!";
-    location.reload();
 
 });
 
@@ -209,4 +207,10 @@ function err() {
     document.getElementById("welcome").style.backgroundColor = "red";
     document.getElementById("welcome").style.color = "white";
     document.getElementById("demo").innerHTML = "Usuario no registrado";
+}
+
+function green() {
+    document.getElementById("welcome").style.display = "block";
+    document.getElementById("welcome").style.backgroundColor = "white";
+    document.getElementById("welcome").style.color = "green";
 }
