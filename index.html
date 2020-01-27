@@ -11,100 +11,105 @@
 
 <body>
 
-        <div id="choice">
-                <button type="submit" id="reg-button" style="display:block;">registro</button>
+    <!---BOTONES REGISTRO / LOG IN-->
+    <div id="choice">
+        <button type="submit" id="reg-button" style="display:block;">registro</button>
+        <button type="submit" id="log-button" style="display: block;">Log In</button>
+    </div>
 
-                <button type="submit" id="log-button" style="display: block;">Log In</button>
-        </div>
-        <!---BOTON LOG OUT (PERMANECE OCULTO)-->
-        <button type="submit" id="logOut-button" style="display: none;" transition: 1s;>Log Out</button>
+    <!---BOTON LOG OUT (PERMANECE OCULTO)-->
+    <button type="submit" id="logOut-button" style="display: none;" transition: 1s;>Log Out</button>
 
-            <!---FORMULARIO DE LOGIN-->
+    <!---FORMULARIO DE LOGIN-->
     <div id="login" style="display: none;">
+
         <fieldset>
-            <form method="post" onsubmit="validacion()">
+
+            <h1>Acceder</h1>
+
+            <form method="post">
                 <!-- Email input-->
                 <div class="form-group">
                     <label for="contacto">Teléfono / E-mail*:</label>
-                    <input id="contactoLog" name="contactoLog" type="text" placeholder="Telf / Mail" pattern="^([0-9]{9})|([A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3})$" required>
+                    <input type="text" id="contactoLog" name="contactoLog" placeholder="Telf / Mail" pattern="^([0-9]{9})|([A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3})$" required>
                 </div>
 
                 <!-- Password input-->
                 <div class="form-group">
                     <label>Password*:</label>
-                    <input id="passwordLog" name="password" type="password" placeholder="***********" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                    <input type="password" id="passwordLog" name="passwordLog" placeholder="***********" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
                     <button type="button" onclick="mostrarPass('passwordLog')">Mostrar contraseña</button>
                 </div>
 
                 <!-- Boton -->
                 <div class="form-group">
-                    <button type="submit" id="enviarLog" name="enviarLog" class="send-button">Enviar</button>
-                </div>       
-            </form> 
-    </fieldset>
+                    <button type="submit" id="enviar" name="enviarLog" class="send-button">Enviar</button>
+                </div>
+            </form>
+        </fieldset>
     </div>
 
-    
-        <!---FORMULARIO DE REGISTRO-->
+
+    <!---FORMULARIO DE REGISTRO-->
     <div id="registro" style="display: none;">
 
-    <fieldset>
+        <fieldset>
 
-        <h1>Formulario de registro</h1>
+            <h1>Formulario de registro</h1>
 
-        <form class="formulario" method="POST" onsubmit="validacion()">
+            <form class="formulario" method="POST" onsubmit="validacion()">
 
-            <!-- nombre input-->
-            <div class="form-group">
-                <label for="name">Nombre*: </label>
-                <input id="nombre" name="nombre" type="text" placeholder="Nombre" pattern="[A-Za-zÑñ]{1,32}" required>
-            </div>
+                <!-- nombre input-->
+                <div class="form-group">
+                    <label for="name">Nombre*: </label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Nombre" pattern="[A-Za-zÑñ]{1,32}" required>
+                </div>
 
-            <!-- Apellido input-->
-            <div class="form-group">
-                <label for="apellido">Apellido*:</label>
-                <input id="apellido" name="apellido" type="text" placeholder="Apellido" pattern="[A-Za-zÑñ]{1,32}" required>
-            </div>
+                <!-- Apellido input-->
+                <div class="form-group">
+                    <label for="apellido">Apellido*:</label>
+                    <input type="text" id="apellido" name="apellido" placeholder="Apellido" pattern="[A-Za-zÑñ]{1,32}" required>
+                </div>
 
-            <!-- Email input-->
-            <div class="form-group">
-                <label for="contacto">Teléfono / E-mail*:</label>
-                <input id="contacto" name="contacto" type="text" placeholder="Telf / Mail" pattern="^([0-9]{9})|([A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3})$" required>
-            </div>
-            <!-- Fecha nacimiento input-->
-            <div class="form-group">
-                <label for="fechaNac">Fecha nacimiento:</label>
-                <input id="fechaNac" name="fechaNac" type="date" class="form-control input-md">
-            </div>
+                <!-- Email input-->
+                <div class="form-group">
+                    <label for="contacto">Teléfono / E-mail*:</label>
+                    <input type="text" id="contacto" name="contacto" placeholder="Telf / Mail" pattern="^([0-9]{9})|([A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3})$" required>
+                </div>
+                <!-- Fecha nacimiento input-->
+                <div class="form-group">
+                    <label for="fechaNac">Fecha nacimiento:</label>
+                    <input type="date" id="fechaNac" name="fechaNac" class="form-control input-md">
+                </div>
 
-            <!-- Password input-->
-            <div class="form-group">
-                <label>Password*:</label>
-                <input type="password" id="pass" name="pass" placeholder="***********" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
-            </div>
+                <!-- Password input-->
+                <div class="form-group">
+                    <label>Password*:</label>
+                    <input type="password" id="pass" name="pass" placeholder="***********" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                </div>
 
-            <!-- Re-Password input-->
-            <div class="form-group">
-                <label for="repasswor">Re-Password*:</label>
-                <input type="password" id="repass" name="repassword"  placeholder="***********" required>
-                <button type="button" onclick="mostrarPass('pass', 'repass')">Mostrar contraseña</button>
-            </div>
+                <!-- Re-Password input-->
+                <div class="form-group">
+                    <label for="repasswor">Re-Password*:</label>
+                    <input type="password" id="repass" name="repassword" placeholder="***********" required>
+                    <button type="button" onclick="mostrarPass('pass', 'repass')">Mostrar contraseña</button>
+                </div>
 
-            <!-- Boton -->
-            <div class="form-group">
-                <button type="submit" id="enviarReg" name="enviarReg" class="send-button">Enviar</button>
-            </div>
-        </form>
-    </fieldset>
-</div>
+                <!-- Boton -->
+                <div class="form-group">
+                    <button type="submit" id="enviar" name="enviarReg" class="send-button">Enviar</button>
+                </div>
+            </form>
+        </fieldset>
+    </div>
 
     <!-- Parrafo para pintar -->
     <div id="welcome" style="display: none;">
         <p id="demo"></p>
     </div>
 
-
     <script src="js/form.js"></script>
+
 </body>
 
 </html>

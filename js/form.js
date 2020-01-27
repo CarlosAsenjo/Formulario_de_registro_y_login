@@ -1,3 +1,17 @@
+window.onload = function() {
+
+    console.log("window onload()")
+    if (getCookie("userSession") && getCookie("passSession")) {
+        log();
+        console.log("window.onload");
+    } else {
+        document.getElementById("login").style.display = "block";
+    }
+}
+
+
+/* ############ BOTONES REGISTRO / OCULTAR ############# */
+
 document.getElementById("reg-button").addEventListener('click', function() {
     tab("registro", "login", "nombre");
 });
@@ -6,54 +20,12 @@ document.getElementById("log-button").addEventListener('click', function() {
     tab("login", "registro", "contacto");
 });
 
+/* ############ Mostrar / Ocultar ############# */
+
 function tab(show, hide1, focus) {
     document.getElementById(show).style.display = "block";
     document.getElementById(hide1).style.display = "none";
     document.getElementById(focus).focus();
-}
-
-/* ############ Mostrar contraseña ############# */
-
-function mostrarPass(pass1, pass2) {
-    var mostrarPass = document.getElementById(pass1);
-    var mostrarPass2 = document.getElementById(pass2);
-
-    if (mostrarPass.type == "password") {
-        mostrarPass.type = "text";
-        if (mostrarPass2) {
-            mostrarPass2.type = "text";
-        }
-    } else {
-        mostrarPass.type = "password";
-        if (mostrarPass2) {
-            mostrarPass2.type = "password";
-        }
-    }
-}
-
-
-/* ############ Validacion ############# */
-
-function valPass(pass, repass) {
-    if (pass == repass) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-function validacion() {
-    event.preventDefault();
-    var user = document.getElementById("contacto").value;
-    var pass = document.getElementById("pass").value;
-    if (valPass(pass, document.getElementById("repass").value)) {
-        setCookie("user", user, 1);
-        setCookie("pass", pass, 1);
-        document.getElementById("reg-button").style.display = "none";
-        document.getElementById("log-button").style.display = "none";
-    } else {
-        console.log("error validacion()");
-    }
 }
 
 
@@ -99,53 +71,115 @@ function delete_cookie(name) {
     document.cookie = name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 }
 
-/* ############ Login ############# */
-function log() {
-    document.getElementById("logOut-button").style.display = "block";
-    document.getElementById("reg-button").style.display = "none";
-    document.getElementById("log-button").style.display = "none";
-    document.getElementById("welcome").style.display = "block";
-    document.getElementById("login").style.display = "none";
-    document.getElementById("demo").innerHTML = "Bienvenido " + getCookie("user");
+
+/* ############ Mostrar contraseña ############# */
+
+function mostrarPass(pass1, pass2) {
+
+    var mostrarPass = document.getElementById(pass1);
+    var mostrarPass2 = document.getElementById(pass2);
+
+    if (mostrarPass.type == "password") {
+        mostrarPass.type = "text";
+        if (mostrarPass2) {
+            mostrarPass2.type = "text";
+        }
+    } else {
+        mostrarPass.type = "password";
+        if (mostrarPass2) {
+            mostrarPass2.type = "password";
+        }
+    }
 }
 
 
-document.getElementById("enviarLog").addEventListener("click", function() {
+/* ############ Validacion ############# */
 
-    
+function valPass(pass, repass) {
+
+    if (pass == repass) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function validacion() {
+
+    event.preventDefault();
+
+    var user = document.getElementById("contacto").value;
+    var pass = document.getElementById("pass").value;
+
+    if (valPass(pass, document.getElementById("repass").value)) {
+        console.log("validacion ok : entra en reg")
+        reg();
+        setCookie("user", user, 1);
+        setCookie("pass", pass, 1);
+        console.log("Cookies user y pass creadas");
+
+    } else {
+        console.log("error validacion()");
+        err();
+    }
+}
+
+
+/* ########### BOTON ENVIAR ############# */
+
+document.getElementById("enviar").addEventListener("click", function() {
+
     var userSession = document.getElementById("contactoLog").value;
     var passSession = document.getElementById("passwordLog").value;
 
     if (userSession == getCookie("user") && passSession == getCookie("pass")) {
+        console.log("entra en funcion log")
         log();
         console.log("user correct");
         setCookie("userSession", userSession, 0.041667);
         setCookie("passSession", passSession, 0.041667);
         console.log("%cSession Created! Cookies lasts for 1h.", 'background: #222; color: green');
 
-    } else {
-        console.log("user incorrecto");
-        //
+    } else if (userSession != getCookie("user") || passSession != getCookie("pass")) {
+        console.log("user incorrecto log");
+        document.getElementById("login").style.display = "block";
+        err();
+
     }
     console.log(document.cookie);
     console.log("Cookie checked");
 
 });
 
-document.getElementById("enviarReg").addEventListener("click", function() {
+
+/* ############ Registro ############# */
+
+function reg() {
+
+    console.log("registrado")
+    document.getElementById("reg-button").style.display = "none";
+    document.getElementById("log-button").style.display = "none";
     document.getElementById("registro").style.display = "none";
-    document.getElementById("welcome").style.display = "block";
-    document.getElementById("demo").innerHTML = "Registro con exito"
-    document.getElementById("welcome").style.color = "green";
     document.getElementById("login").style.display = "block";
-});
+    document.getElementById("welcome").style.display = "block";
+    document.getElementById("welcome").style.backgroundColor = "white";
+    document.getElementById("welcome").style.color = "green";
+    document.getElementById("demo").innerHTML = "Registro con exito"
+}
 
-window.onload = function() {
 
-    if (getCookie("userSession") && getCookie("passSession")) {
-        log();
-       console.log("window.onload");
-    }
+/* ############ Login ############# */
+
+function log() {
+
+    console.log("logueado")
+    document.getElementById("reg-button").style.display = "none";
+    document.getElementById("log-button").style.display = "none";
+    document.getElementById("login").style.display = "none";
+    document.getElementById("logOut-button").style.display = "block";
+    document.getElementById("welcome").style.display = "block";
+    document.getElementById("welcome").style.color = "blue";
+    document.getElementById("demo").innerHTML = "Bienvenido " + getCookie("userSession");
 }
 
 
@@ -153,11 +187,26 @@ window.onload = function() {
 
 document.getElementById("logOut-button").addEventListener('click', function() {
 
+    console.log("boton logout")
     delete_cookie("userSession");
     delete_cookie("passSession");
+    delete_cookie("user");
+    delete_cookie("pass");
+    console.log("cookies eliminadas")
+
     document.getElementById("logOut-button").style.display = "none";
     document.getElementById("welcome").style.display = "block";
     document.getElementById("welcome").style.color = "green";
     document.getElementById("demo").innerHTML = "ADEU!";
+    location.reload();
 
 });
+
+function err() {
+
+    console.log("funcion error")
+    document.getElementById("welcome").style.display = "block";
+    document.getElementById("welcome").style.backgroundColor = "red";
+    document.getElementById("welcome").style.color = "white";
+    document.getElementById("demo").innerHTML = "Usuario no registrado";
+}

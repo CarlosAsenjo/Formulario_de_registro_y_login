@@ -1,5 +1,4 @@
-
-h1{
+h1 {
     text-align: center;
 }
 
@@ -11,26 +10,25 @@ fieldset {
     margin: auto;
 }
 
-
-
-#welcome{
-
-  justify-content: center;
-  text-align: center;
+#welcome {
+    justify-content: center;
+    text-align: center;
 }
 
-input{
+input {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-  }
+}
 
-  /*BOTONES*/
 
-  button[id=reg-button],button[id=log-button] {
+/*BOTONES*/
+
+button[id=reg-button],
+button[id=log-button] {
     width: 8%;
     background-color: rgb(226, 250, 87);
     font-weight: bold;
@@ -39,16 +37,15 @@ input{
     border: none;
     border-radius: 4px;
     cursor: pointer;
+}
 
-  }
-
-  button[id=reg-button]:hover,
-  button[id=log-button]:hover{
+button[id=reg-button]:hover,
+button[id=log-button]:hover {
     background-color: #9ba53d;
-  }
+}
 
-  button[id=enviarLog],
-  button[id=enviarReg] {
+button[id=enviar],
+button[id=enviar] {
     width: 100%;
     background-color: #4CAF50;
     color: white;
@@ -57,14 +54,14 @@ input{
     border: none;
     border-radius: 4px;
     cursor: pointer;
-  }
+}
 
-  button[id=enviarLog],
-  button[id=enviarReg]:hover {
+button[id=enviar],
+button[id=enviar]:hover {
     background-color: #45a049;
-  }
+}
 
-  button[id=logOut-button]{
+button[id=logOut-button] {
     background-color: #f15959;
     font-weight: bold;
     width: 8%;
@@ -73,6 +70,4 @@ input{
     border: none;
     border-radius: 4px;
     cursor: pointer;
-  }
-
-  
+}
