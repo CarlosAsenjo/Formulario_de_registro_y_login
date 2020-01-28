@@ -29,6 +29,6 @@ Botón para mostrar/ocultar la contraseña
 * Una vez que el usuario ha sido autenticado puede cerrar la sesion haciendo click en el botón de Logout, eliminando las cookies      creadas.
 * Las cookies se borran por defecto al cerrar el navegador.
 
-***Puede seguirse el proceso de cookies en consola***
+***Puede seguirse el proceso de cookies en consola*** *
 
 ![alt text](img/Buttons.PNG)
