@@ -4,7 +4,7 @@ Desarrollo web en entorno cliente.
 Practica Unidad 5
 
 # FORMULARIO DE REGISTRO Y LOGIN CON COOKIES
-#### (Ejecutar en Firefox)
+#### (Ejecutar en Mozilla Firefox)
 ***
 
 ## funcionalidad
