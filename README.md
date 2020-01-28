@@ -39,6 +39,7 @@ Botón para mostrar/ocultar la contraseña
 
 ## Formulario Login
 ![alt text](img/loguearse.PNG)
+
  _(Con detección errores)*_
 ![alt text](img/emptylog.PNG)
 
@@ -46,5 +47,7 @@ Botón para mostrar/ocultar la contraseña
 ![alt text](img/reg.PNG)
 
  _(Con detección errores)*_
-![alt text](img/emptyreg.PNG)
+![alt text](img/EmptyReg.PNG)
 
+## Usuario registrado
+![alt text](img/UsuarioRegistrado.PNG)
