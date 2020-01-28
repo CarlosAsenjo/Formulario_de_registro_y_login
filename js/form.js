@@ -136,17 +136,15 @@ document.getElementById("enviar").addEventListener("click", function() {
 
     if (userSession == getCookie("user") && passSession == getCookie("pass")) {
         console.log("entra en funcion log")
-        log();
         console.log("user correct");
         setCookie("userSession", userSession, 0.041667);
         setCookie("passSession", passSession, 0.041667);
+        log();
         console.log("%cSession Created! Cookies lasts for 1h.", 'background: #222; color: green');
 
-    }
-
-    if (getCookie("user") == "" || getCookie("pass") == "") {
+    } else {
         console.log("user incorrecto log");
-        // document.getElementById("login").style.display = "block";
+            document.getElementById("login").style.display = "block";
         err();
 
     }
@@ -178,7 +176,7 @@ function log() {
     document.getElementById("login").style.display = "none";
     document.getElementById("logOut-button").style.display = "block";
     green();
-    document.getElementById("demo").innerHTML = "Bienvenido " + getCookie("userSession");
+    document.getElementById("demo").innerHTML = "Bienvenido " + getCookie("user");
 }
 
 
@@ -189,8 +187,6 @@ document.getElementById("logOut-button").addEventListener('click', function() {
     console.log("boton logout")
     delete_cookie("userSession");
     delete_cookie("passSession");
-    delete_cookie("user");
-    delete_cookie("pass");
     console.log("cookies eliminadas")
 
     document.getElementById("logOut-button").style.display = "none";
@@ -198,6 +194,8 @@ document.getElementById("logOut-button").addEventListener('click', function() {
     document.getElementById("demo").innerHTML = "ADEU!";
 
 });
+
+/* ############ ERROR ############# */
 
 function err() {
 
@@ -208,6 +206,7 @@ function err() {
     document.getElementById("demo").innerHTML = "Usuario no registrado";
 }
 
+/* ############ OK ############# */
 function green() {
     document.getElementById("welcome").style.display = "block";
     document.getElementById("welcome").style.backgroundColor = "white";
