@@ -51,3 +51,9 @@ Botón para mostrar/ocultar la contraseña
 
 ## Usuario registrado
 ![alt text](img/UsuarioRegistrado.PNG)
+
+## Usuario Logueado
+![alt text](img/Dentro.PNG)
+
+## Usuario Desconectado
+![alt text](img/adeu.PNG)
