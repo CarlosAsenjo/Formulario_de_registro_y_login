@@ -25,8 +25,8 @@ Botón para mostrar/ocultar la contraseña
 ## Implementación de cookies
 
 * Se crearán 2 cookies al registrar un usuario conteniendo el contacto ***(Email/Telefono)*** y la contraseña.
-* Cuando se logea el usuario en el formulario de login, se crean otras 2 cookies para esa sesión creada, las cuales durarán 1 hora.
-* Si el usuario se ha autentificado correctamente, tendrá la opción de un botón de Logout el cual cerrará la session y eliminará las cookies creadas.
+* Una vez que el usuario se loguea, si existe, se crean otras 2 cookies para la sesión, durarán 1 hora.
+* Una vez que el usuario ha sido autenticado puede cerrar la sesion haciendo click en el botón de Logout, eliminando las cookies      creadas.
 * Si el usuario no presiona el boton de Logout pero cierra esa pestaña y se vuelve a logear en menos de 1 hora, seguirá autentificado.
 * Por defecto las cookies se borran al cerrar el navegador.
 * Si se activa la consola se puede ver todo el procedimiento de las cookies.
