@@ -6,9 +6,9 @@ Practica Unidad 5
 
 ## funcionalidad
 
-* Directorios:
+### Directorios:
 - Formulario_de_registro_y_login/index.html: Raiz que contiene los siguientes direcctorios. y el fichero **index.html*** con los formularios y su validacion de campos. 
-- /css: Contiene la hoja de estilos ***stylesheet.css***.
+- */css:* Contiene la hoja de estilos ***stylesheet.css***.
 - /img: Contiene las imagenes *** *.png*** de las capturas de pantalla.
 - /js: Contiene el script ***form.js*** con las funciones y manejadores necesarios para validacion de ejecucion del formulario (), crear cookies de usuario y sesión.
 - /test: Pruebas lanzadas para hacer comprobacion de errores._(Aun en construccion)_
