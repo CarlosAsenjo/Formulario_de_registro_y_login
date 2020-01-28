@@ -31,4 +31,4 @@ Botón para mostrar/ocultar la contraseña
 
 ***Puede seguirse el proceso de cookies en consola***
 
-https://raw.githubusercontent.com/CarlosAsenjo/Formulario_de_registro_y_login/blob/master/img/Buttons.PNG
+![alt text](https://raw.githubusercontent.com/CarlosAsenjo/Formulario_de_registro_y_login/blob/master/img/Buttons.PNG)
