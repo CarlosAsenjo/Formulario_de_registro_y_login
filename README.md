@@ -4,7 +4,7 @@ Practica Unidad 5
 #### (Ejecutar en Firefox)
 ***
 
-## Requisitos funcionales
+## funcionalidad
 
 ### El formulario de ***Registro*** consta de los siguientes campos:
 
@@ -31,3 +31,4 @@ Botón para mostrar/ocultar la contraseña
 
 ***Puede seguirse el proceso de cookies en consola***
 
+https://github.com/CarlosAsenjo/Formulario_de_registro_y_login/blob/master/img/Buttons.PNG
