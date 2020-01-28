@@ -34,5 +34,14 @@ Botón para mostrar/ocultar la contraseña
 ***
 ## Capturas
 
-### Botones para registrarse o loguearse
-![alt text](img/Buttons.PNG) ![alt text](img/Buttons.PNG)
+### Botones para registrarse o loguearse _(sin y con hover)_
+![alt text](img/Buttons.PNG) ![alt text](img/ButtonsHover.PNG)
+
+## Formulario Login
+![alt text](img/loguearse.PNG)
+ _(Con detección errores)*_
+![alt text](img/emptylog.PNG)
+
+## Formulario Registro
+![alt text](img/loguearse.PNG)
+
