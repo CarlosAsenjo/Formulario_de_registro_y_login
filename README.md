@@ -31,4 +31,8 @@ Botón para mostrar/ocultar la contraseña
 
 ***Puede seguirse el proceso de cookies en consola*** *
 
-![alt text](img/Buttons.PNG)
+***
+## Capturas
+
+### Botones para registrarse o loguearse
+![alt text](img/Buttons.PNG) ![alt text](img/Buttons.PNG)
