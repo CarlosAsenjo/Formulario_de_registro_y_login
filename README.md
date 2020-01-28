@@ -47,6 +47,7 @@ Botón para mostrar/ocultar la contraseña
 ![alt text](img/reg.PNG)
 
  _(Con detección errores)*_
+ 
 ![alt text](img/EmptyReg.PNG)
 
 ## Usuario registrado
