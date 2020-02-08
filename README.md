@@ -13,7 +13,7 @@ Desarrollo web en entorno cliente. Practica Unidad 5
 - ***/test:*** Pruebas lanzadas para hacer comprobacion de errores._(Aun en construccion)_
 
 
-## funcionalidad
+## Funcionalidad
 
 ### El formulario de ***Registro*** consta de los siguientes campos:
 
